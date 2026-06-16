@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #08090c;
+  color: #f3f1ec;
+  overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+canvas {
+  outline: none;
+  touch-action: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 122, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 122, 0.5);
+}
+
+/* Utility for glassy panels */
+@layer components {
+  .glass {
+    @apply bg-ink-900/60 backdrop-blur-xl border border-white/5;
+  }
+  .glass-strong {
+    @apply bg-ink-900/85 backdrop-blur-2xl border border-white/10;
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #d4af7a 0%, #e8c89a 50%, #b89262 100%);
+  }
+  .gold-text {
+    background: linear-gradient(135deg, #f0d9b0 0%, #d4af7a 50%, #a8814f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Floor plan SVG */
+.floorplan-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Number ticker */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth focus rings */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #d4af7a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
